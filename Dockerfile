@@ -11,4 +11,7 @@ WORKDIR /opt/inside/application
 COPY ./etc/Docker/start.sh /opt/inside/script/start.sh
 COPY ./target/inside_cloudgateway.jar /opt/inside/application/inside_cloudgateway.jar
 
+RUN chmod +X /opt/inside/script/start.sh
+RUN chmod +X /opt/inside/application/inside_cloudgateway.jar
+
 ENTRYPOINT sh /opt/inside/script/start.sh

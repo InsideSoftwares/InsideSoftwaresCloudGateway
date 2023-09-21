@@ -2,6 +2,7 @@
 
 Projeto responsavel por realizar load balance das aplicações
 * Versão disponivel: 1.0-SNAPSHOT
+* [License](LICENSE.MD)
 
 ## Framework Utilizado
 
