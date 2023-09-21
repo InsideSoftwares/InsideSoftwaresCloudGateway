@@ -1,0 +1,34 @@
+server:
+  port: ${CLOUD_GATEWAY_PORT:8880}
+
+spring:
+  application:
+    name: Inside_CloudGateway
+  profiles:
+    active: ${CLOUD_GATEWAY_PROFILES:native}
+  cloud:
+    config:
+      uri: ${CLOUD_CONFIG_URI:http://localhost:8888}
+      username: ${CLOUD_CONFIG_NAME:ADMIN}
+      password: ${CLOUD_CONFIG_PASSWORD:ADMIN}
+  boot:
+    admin:
+      client:
+        url: ${CLOUD_ADMIN_URL:http://localhost:8889/admin}
+      instance:
+        prefer-ip: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${CLOUD_EUREKA_URL:http://localhost:8889/eureka}
+  instance:
+    preferIpAddress: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
